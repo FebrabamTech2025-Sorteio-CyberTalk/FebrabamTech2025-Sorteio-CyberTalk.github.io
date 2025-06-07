@@ -1,7 +1,7 @@
-<!-- <!DOCTYPE html>-->
-<!--<html lang="pt-BR">-->
-<!--<head>-->
-<!--<meta charset="UTF-8">-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorteio de Brinde</title>
     <style>
@@ -82,6 +82,135 @@
             color: #a0aec0;
             font-size: 1.2rem;
             font-weight: 300;
+        }
+
+        /* SEÇÃO DO BRINDE */
+        .brinde-section {
+            background: linear-gradient(145deg, rgba(0, 255, 157, 0.15), rgba(0, 212, 255, 0.1));
+            border: 2px solid #00ff9d;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 
+                0 0 30px rgba(0, 255, 157, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brinde-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 157, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .brinde-title {
+            font-size: 2.2rem;
+            color: #00ff9d;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 15px rgba(0, 255, 157, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 1.3rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(0, 255, 157, 0.3);
+            border-radius: 12px;
+            color: #e2e8f0;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-input:focus {
+            border-color: #00ff9d;
+            box-shadow: 
+                0 0 0 3px rgba(0, 255, 157, 0.2),
+                inset 0 2px 8px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .form-input::placeholder {
+            color: #a0aec0;
+        }
+
+        .btn-enviar {
+            background: linear-gradient(45deg, #00ff9d, #00d4ff);
+            color: #0f1419;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 255, 157, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-enviar:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 255, 157, 0.4);
+        }
+
+        .btn-enviar:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 4px 15px rgba(0, 255, 157, 0.6);
+        }
+
+        .btn-enviar::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-enviar:active::before {
+            width: 300px;
+            height: 300px;
         }
 
         .main-message {
@@ -235,6 +364,14 @@
             .stats {
                 grid-template-columns: 1fr;
             }
+            
+            .brinde-title {
+                font-size: 1.8rem;
+            }
+            
+            .form-input {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -246,6 +383,26 @@
             <div class="logo">🛡️</div>
             <h1>Security Checkpoint</h1>
             <div class="subtitle">Cybersecurity Awareness Portal</div>
+        </div>
+
+        <!-- NOVA SEÇÃO DO BRINDE -->
+        <div class="brinde-section">
+            <h2 class="brinde-title">🎁 Retire seu Brinde 🎁</h2>
+            
+            <div class="form-group">
+                <label class="form-label">Digite seu nome:</label>
+                <input 
+                    type="text" 
+                    id="nomeUsuario" 
+                    class="form-input" 
+                    placeholder="Seu nome completo aqui..."
+                    maxlength="50"
+                >
+            </div>
+
+            <button class="btn-enviar" onclick="enviarFormulario()">
+                Enviar
+            </button>
         </div>
 
         <div class="main-message">
@@ -314,7 +471,7 @@
             </p>
         </div>
 
-        <div class="footer">
+        <div class="footer" id="final-pagina">
             <h3 style="color: #00ff9d; margin-bottom: 1rem;">🎓 Keep Learning</h3>
             <p style="color: #cbd5e0; margin-bottom: 1.5rem;">
                 Security awareness is a journey, not a destination. Small habits make a big difference.
@@ -325,6 +482,40 @@
     </div>
 
     <script>
+        // Função do formulário de brinde
+        function enviarFormulario() {
+            const nomeInput = document.getElementById('nomeUsuario');
+            const nome = nomeInput.value.trim();
+            
+            // Verifica se o nome foi preenchido
+            if (nome === '') {
+                alert('Por favor, digite seu nome antes de enviar!');
+                return;
+            }
+            
+            // Animação de sucesso
+            const btn = event.target;
+            btn.style.background = '#28a745';
+            btn.textContent = 'Enviado! ✓';
+            
+            // Limpa o campo após 500ms
+            setTimeout(() => {
+                nomeInput.value = '';
+                
+                // Restaura o botão após 1 segundo
+                setTimeout(() => {
+                    btn.style.background = 'linear-gradient(45deg, #00ff9d, #00d4ff)';
+                    btn.textContent = 'Enviar';
+                }, 1000);
+                
+                // Vai para o final da página
+                document.getElementById('final-pagina').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 500);
+        }
+
         // Matrix-style background animation
         function createMatrix() {
             const matrix = document.getElementById('matrix');
@@ -371,6 +562,18 @@
             item.addEventListener('mouseleave', function() {
                 this.style.boxShadow = 'none';
             });
+        });
+
+        // Adiciona evento de Enter no campo de input
+        document.addEventListener('DOMContentLoaded', function() {
+            const nomeInput = document.getElementById('nomeUsuario');
+            if (nomeInput) {
+                nomeInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        enviarFormulario();
+                    }
+                });
+            }
         });
 
         // Smooth scroll for better UX
