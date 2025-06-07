@@ -20,6 +20,117 @@
             overflow-y: hidden; /* Esta linha trava o scroll vertical */
         }
 
+        /* Classe para destravar o scroll */
+        body.scroll-unlocked {
+            overflow-y: auto !important;
+        }
+
+        /* ALERTA VERMELHO */
+        .alert-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(220, 20, 60, 0.95);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            animation: alertPulse 0.5s ease-in-out;
+        }
+
+        .alert-content {
+            background: linear-gradient(145deg, #dc143c, #b91c1c);
+            border: 3px solid #ffffff;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 2rem;
+            box-shadow: 
+                0 0 50px rgba(220, 20, 60, 0.8),
+                inset 0 2px 10px rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alert-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: alertShine 2s infinite;
+        }
+
+        .alert-icon {
+            font-size: 5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            animation: bounce 1s infinite;
+        }
+
+        .alert-title {
+            font-size: 3rem;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .alert-message {
+            font-size: 1.5rem;
+            color: #ffffff;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .alert-close-btn {
+            background: #ffffff;
+            color: #dc143c;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .alert-close-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes alertPulse {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes alertShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
         .matrix-bg {
             position: fixed;
             top: 0;
@@ -53,12 +164,12 @@
             backdrop-filter: blur(10px);
         }
         
-.logo img {
-    height: auto;        /* Ajuste conforme necessário */
-    width: auto;         /* Mantém proporção */
-    max-width: 100%;     /* Responsivo */
-    object-fit: contain; /* Preserva aspecto */
-}
+        .logo img {
+            height: auto;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
         
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
@@ -366,18 +477,45 @@
             .form-input {
                 max-width: 100%;
             }
+
+            .alert-title {
+                font-size: 2rem;
+            }
+
+            .alert-message {
+                font-size: 1.2rem;
+            }
+
+            .alert-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- ALERTA VERMELHO -->
+    <div class="alert-overlay" id="alertOverlay">
+        <div class="alert-content">
+            <div class="alert-icon">⚠️</div>
+            <h2 class="alert-title">ALERTA!</h2>
+            <p class="alert-message">
+                Você acabou de fornecer seus dados pessoais para um site desconhecido!<br>
+                Esta é uma demonstração de como golpes de phishing funcionam.<br>
+                <strong>SEMPRE verifique a fonte antes de inserir suas informações!</strong><br>
+               
+            </p>
+            <button class="alert-close-btn" onclick="fecharAlerta()">Entendi!</button>
+        </div>
+    </div>
+
     <div class="matrix-bg" id="matrix"></div>
     
     <div class="container">
         <div class="header">
             <div class="logo">
-    <img src="images/fbbtech2025.png" alt="FebrabamTech2025" style="max-width: 100%; height: auto;">
-</div>
-                    
+                <img src="images/fbbtech2025.png" alt="FebrabamTech2025" style="max-width: 100%; height: auto;">
+            </div>
         </div>
 
         <!-- NOVA SEÇÃO DO BRINDE -->
@@ -477,6 +615,8 @@
     </div>
 
     <script>
+        let scrollTimer = null;
+
         // Função do formulário de brinde
         function enviarFormulario() {
             const nomeInput = document.getElementById('nomeUsuario');
@@ -488,7 +628,10 @@
                 return;
             }
             
-            // Animação de sucesso
+            // Mostra o alerta vermelho
+            mostrarAlerta();
+            
+            // Animação de sucesso no botão
             const btn = event.target;
             btn.style.background = '#28a745';
             btn.textContent = 'Enviado! ✓';
@@ -502,13 +645,38 @@
                     btn.style.background = 'linear-gradient(45deg, #00ff9d, #00d4ff)';
                     btn.textContent = 'Enviar';
                 }, 1000);
-                
-                // Vai para o final da página
-                document.getElementById('final-pagina').scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
             }, 500);
+        }
+
+        // Função para mostrar o alerta
+        function mostrarAlerta() {
+            const alertOverlay = document.getElementById('alertOverlay');
+            alertOverlay.style.display = 'flex';
+            
+            // Destravar o scroll por 2 minutos quando o alerta aparecer
+            document.body.classList.add('scroll-unlocked');
+            
+            // Timer para retravar o scroll após 2 minutos (120000ms)
+            if (scrollTimer) {
+                clearTimeout(scrollTimer);
+            }
+            
+            scrollTimer = setTimeout(() => {
+                document.body.classList.remove('scroll-unlocked');
+                console.log('Scroll foi travado novamente após 2 minutos');
+            }, 120000); // 2 minutos
+        }
+
+        // Função para fechar o alerta
+        function fecharAlerta() {
+            const alertOverlay = document.getElementById('alertOverlay');
+            alertOverlay.style.display = 'none';
+            
+            // Vai para o final da página
+            document.getElementById('final-pagina').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
 
         // Matrix-style background animation
