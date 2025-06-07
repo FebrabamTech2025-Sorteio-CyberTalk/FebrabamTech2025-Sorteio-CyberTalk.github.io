@@ -1,4 +1,30 @@
-<!DOCTYPE html>
+.invite-title {
+                font-size: 2rem;
+            }
+
+            .invite-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .invite-message {
+                font-size: 1.1rem;
+            }
+
+            .invite-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .invite-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .invite-btn-primary,
+            .invite-btn-secondary {
+                width: 100%;
+                max-width: 280px;
+            }<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -38,6 +64,150 @@
             justify-content: center;
             align-items: center;
             animation: alertPulse 0.5s ease-in-out;
+        }
+
+        /* CONVITE VERDE LIMÃO */
+        .invite-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(50, 205, 50, 0.95);
+            z-index: 9998;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            animation: invitePulse 0.7s ease-in-out;
+        }
+
+        .invite-content {
+            background: linear-gradient(145deg, #B1ED00, #00ff32);
+            border: 3px solid #ff1493;
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 2rem;
+            box-shadow: 
+                0 0 60px rgba(50, 205, 50, 0.8),
+                inset 0 2px 10px rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .invite-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 20, 147, 0.2), transparent);
+            animation: inviteShine 2.5s infinite;
+        }
+
+        .invite-icon {
+            font-size: 4rem;
+            color: #ff1493;
+            margin-bottom: 1rem;
+            animation: inviteBounce 1.5s infinite;
+        }
+
+        .invite-title {
+            font-size: 2.8rem;
+            color: #ff1493;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .invite-subtitle {
+            font-size: 2rem;
+            color: #000000;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+            position: relative;
+            z-index: 2;
+        }
+
+        .invite-message {
+            font-size: 1.4rem;
+            color: #ff1493;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+            font-weight: 600;
+        }
+
+        .invite-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .invite-btn-primary {
+            background: linear-gradient(45deg, #ff1493, #000000);
+            color: #ffffff;
+            border: 2px solid #B1ED00;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 35px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+        }
+
+        .invite-btn-secondary {
+            background: transparent;
+            color: #ff1493;
+            border: 2px solid #ff1493;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 35px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .invite-btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.6);
+        }
+
+        .invite-btn-secondary:hover {
+            background: rgba(255, 20, 147, 0.1);
+            transform: translateY(-2px);
+        }
+
+        @keyframes invitePulse {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes inviteShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @keyframes inviteBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1); }
+            40% { transform: translateY(-15px) scale(1.1); }
+            60% { transform: translateY(-8px) scale(1.05); }
         }
 
         .alert-content {
@@ -494,16 +664,38 @@
     </style>
 </head>
 <body>
+    <!-- CONVITE VERDE LIMÃO -->
+    <div class="invite-overlay" id="inviteOverlay">
+        <div class="invite-content">
+            <div class="invite-icon">🎓🛡️</div>
+            <h2 class="invite-title">Convite Especial!</h2>
+            <h3 class="invite-subtitle">Talk: Mitos e Verdades sobre Cibersegurança na Era da IA</h3>
+            <p class="invite-message">
+                Quer aprender como se proteger deste e de outros tipos de ataques?<br>
+                <strong>Participe do nosso Talk exclusivo</strong> e descubra os segredos para navegar com segurança no mundo digital!<br><br>
+                🚀 <strong>Aprenda técnicas avançadas de proteção</strong><br>
+                🤖 <strong>Entenda os riscos da IA em Cibersegurança</strong><br>
+                🔒 <strong>Torne-se um expert em segurança digital</strong>
+            </p>
+            <div class="invite-buttons">
+                <button class="invite-btn-primary" onclick="aceitarConvite()">
+                    🎯 Vamos Nessa!
+                </button>
+                
+
+                </div>
+        </div>
+    </div>
+
     <!-- ALERTA VERMELHO -->
     <div class="alert-overlay" id="alertOverlay">
         <div class="alert-content">
             <div class="alert-icon">⚠️</div>
             <h2 class="alert-title">ALERTA!</h2>
             <p class="alert-message">
-                Você acabou de fornecer seus dados pessoais para um site desconhecido!<br>
+                Você acabou de fornecer seus dados para um site desconhecido!<br>
                 Esta é uma demonstração de como golpes de phishing funcionam.<br>
-                <strong>SEMPRE verifique a fonte antes de inserir suas informações!</strong><br>
-               
+                <strong>SEMPRE verifique a fonte antes de inserir informações!</strong>
             </p>
             <button class="alert-close-btn" onclick="fecharAlerta()">Entendi!</button>
         </div>
@@ -539,78 +731,76 @@
         </div>
 
         <div class="main-message">
-            <div class="question">🤔 Did you check the source before clicking?</div>
+            <div class="question"> </div>
             <p style="text-align: center; color: #cbd5e0; font-size: 1.1rem; line-height: 1.6;">
-                Great job participating in our security awareness exercise! You've just experienced a common scenario that happens every day in the digital world.
+                
             </p>
         </div>
 
         <div class="content">
-            <h2 style="color: #00d4ff; margin-bottom: 1.5rem; text-align: center;">🎯 What Just Happened?</h2>
+            <h2 style="color: #00d4ff; margin-bottom: 1.5rem; text-align: center;">Os códigos QR são super práticos, não é mesmo?  </h2>
             <p style="color: #e2e8f0; line-height: 1.7; font-size: 1.1rem; text-align: center;">
-                You scanned a QR code and clicked a link without knowing exactly where it would take you. 
-                This is a <span class="highlight">completely normal behavior</span> - most people do this daily! 
-                The goal isn't to make you feel bad, but to help you develop <span class="highlight">security awareness habits</span>.
+                
+               <span class="highlight">Uma dica valiosa:</span> sempre que escanear um, dê uma espiadinha no endereço que aparece na tela antes de tocar para abrir.
+                <span class="highlight"> Assim você navega com total segurança! 😊</span>.
             </p>
         </div>
 
         <div class="stats">
             <div class="stat-card">
                 <span class="stat-number">89%</span>
-                <div class="stat-label">of people scan QR codes without hesitation</div>
+                <div class="stat-label">das pessoas escaneiam códigos QR sem hesitação</div>
             </div>
             <div class="stat-card">
                 <span class="stat-number">3.4B</span>
-                <div class="stat-label">phishing emails sent daily</div>
+                <div class="stat-label">é a quantidade de e-mails de phishing enviados diariamente</div>
             </div>
             <div class="stat-card">
-                <span class="stat-number">15sec</span>
-                <div class="stat-label">average time to check a link</div>
+                <span class="stat-number">15seg</span>
+                <div class="stat-label">tempo médio para verificar um link</div>
             </div>
         </div>
 
         <div class="content">
-            <h2 style="color: #00ff9d; margin-bottom: 1.5rem;">🛡️ Simple Security Habits</h2>
+            <h2 style="color: #00ff9d; margin-bottom: 1.5rem;">🛡️ Hábitos simples para a segurança</h2>
             <div class="tips">
                 <div class="tip-item">
-                    <div class="tip-title">🔍 Pause & Preview</div>
-                    <div class="tip-description">Before clicking any QR code or link, take a moment to preview the URL. Most phones show you the destination before opening it.</div>
+                    <div class="tip-title">🔍 Pausa & Validação/div>
+                    <div class="tip-description">Antes de clicar em qualquer código QR ou link, reserve um momento para validar a URL. 
+                        A maioria dos celulares mostra o destino antes de abri-lo.</div>
+                </div>
+                                              
+                <div class="tip-item">
+                    <div class="tip-title">🌐 Verifique o Domínio</div>
+                    <div class="tip-description">Procure por domínios suspeitos, erros de ortografia ou redirecionamentos inesperados. 
+                        Organizações legítimas usam URLs consistentes e reconhecíveis.</div>
                 </div>
                 
                 <div class="tip-item">
-                    <div class="tip-title">🏢 Verify the Source</div>
-                    <div class="tip-description">Ask yourself: "Do I know who created this QR code?" If it's from an unknown source, be extra cautious.</div>
-                </div>
-                
-                <div class="tip-item">
-                    <div class="tip-title">🌐 Check the Domain</div>
-                    <div class="tip-description">Look for suspicious domains, misspellings, or unexpected redirects. Legitimate organizations use consistent, recognizable URLs.</div>
-                </div>
-                
-                <div class="tip-item">
-                    <div class="tip-title">🤝 When in Doubt, Ask</div>
-                    <div class="tip-description">If you receive a QR code or link unexpectedly, verify it through another channel before clicking.</div>
+                    <div class="tip-title">🤝 Se estiver em dúvida, Pergunte</div>
+                    <div class="tip-description">Se receber um código QR ou link inesperadamente, verifique-o por outro canal antes de clicar, como por exemplo nos sites:
+                      <p>🔗 https://www.virustotal.com </p> 
+                        <p>🔍 https://transparencyreport.google.com/safe-browsing/search  </p>  </div>
                 </div>
             </div>
         </div>
 
         <div class="warning-box">
             <div class="warning-title">
-                ⚡ Remember: You're Not the Problem, You're the Solution
+                ⚡ Lembre-se: Nós não somos o problema, Somos a Solução!
             </div>
             <p style="color: #e2e8f0; line-height: 1.6;">
-                Cybersecurity isn't about perfect behavior - it's about building awareness and developing good habits. 
-                Every time you pause to think before clicking, you're making the digital world safer for everyone.
+                Cibersegurança não se trata de comportamento perfeito, mas sim de conscientizar e desenvolver bons hábitos.
+                Cada vez que pensamos antes de clicar, nós tornamos o mundo digital mais seguro para todos.
             </p>
         </div>
 
         <div class="footer" id="final-pagina">
-            <h3 style="color: #00ff9d; margin-bottom: 1rem;">🎓 Keep Learning</h3>
+            <h3 style="color: #00ff9d; margin-bottom: 1rem;">🎓 Continue Aprendendo</h3>
             <p style="color: #cbd5e0; margin-bottom: 1.5rem;">
-                Security awareness is a journey, not a destination. Small habits make a big difference.
+                A conscientização sobre segurança é uma jornada, não um destino. Pequenos hábitos fazem uma grande diferença.
             </p>
-            <a href="#" class="btn">Learn More Security Tips</a>
-            <a href="#" class="btn">Take Security Quiz</a>
+            
         </div>
     </div>
 
@@ -652,8 +842,50 @@
         function mostrarAlerta() {
             const alertOverlay = document.getElementById('alertOverlay');
             alertOverlay.style.display = 'flex';
+        }
+
+        // Função para fechar o alerta
+        function fecharAlerta() {
+            const alertOverlay = document.getElementById('alertOverlay');
+            alertOverlay.style.display = 'none';
             
-            // Destravar o scroll por 2 minutos quando o alerta aparecer
+            // Mostra o convite verde limão
+            mostrarConvite();
+        }
+
+        // Função para mostrar o convite
+        function mostrarConvite() {
+            const inviteOverlay = document.getElementById('inviteOverlay');
+            inviteOverlay.style.display = 'flex';
+        }
+
+        // Função quando aceita o convite
+        function aceitarConvite() {
+            const inviteOverlay = document.getElementById('inviteOverlay');
+            inviteOverlay.style.display = 'none';
+            
+            // Mostra mensagem de confirmação
+            alert('🎉 Parabéns! Você se inscreveu no Talk "Mitos e Verdades sobre Cibersegurança na Era da IA"!\n\nEm breve você receberá mais informações sobre data, horário e local do evento.\n\nObrigado por se preocupar com sua segurança digital! 🛡️');
+            
+            // Destravar o scroll e ir para o final da página
+            finalizarExperiencia();
+        }
+
+        // Função quando recusa o convite
+        function recusarConvite() {
+            const inviteOverlay = document.getElementById('inviteOverlay');
+            inviteOverlay.style.display = 'none';
+            
+            // Mensagem motivacional
+            alert('📚 Tudo bem! O importante é que você já deu o primeiro passo ao participar desta demonstração.\n\nLembre-se: a segurança digital é uma jornada contínua de aprendizado. Continue sempre alerta! 🔍');
+            
+            // Destravar o scroll e ir para o final da página
+            finalizarExperiencia();
+        }
+
+        // Função para finalizar a experiência
+        function finalizarExperiencia() {
+            // Destravar o scroll por 2 minutos
             document.body.classList.add('scroll-unlocked');
             
             // Timer para retravar o scroll após 2 minutos (120000ms)
@@ -665,18 +897,14 @@
                 document.body.classList.remove('scroll-unlocked');
                 console.log('Scroll foi travado novamente após 2 minutos');
             }, 120000); // 2 minutos
-        }
-
-        // Função para fechar o alerta
-        function fecharAlerta() {
-            const alertOverlay = document.getElementById('alertOverlay');
-            alertOverlay.style.display = 'none';
             
             // Vai para o final da página
-            document.getElementById('final-pagina').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
+            setTimeout(() => {
+                document.getElementById('final-pagina').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 500);
         }
 
         // Matrix-style background animation
