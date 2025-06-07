@@ -643,13 +643,13 @@
         <div class="invite-content">
             <div class="invite-icon">🎓🛡️</div>
             <h2 class="invite-title">Convite Especial!</h2>
+          <p class="invite-message">   Participe do nosso Talk no <strong> Stand Febraban Educação</strong> e descubra os segredos para navegar com segurança no mundo digital!<br><br>
             <h3 class="invite-subtitle">Talk: Mitos e Verdades sobre Cibersegurança na Era da IA</h3>
             <p class="invite-message">
-                Quer aprender como se proteger deste e de outros tipos de ataques?<br>
-                <strong>Participe do nosso Talk exclusivo</strong> e descubra os segredos para navegar com segurança no mundo digital!<br><br>
-                🚀 <strong>Aprenda técnicas avançadas de proteção</strong><br>
-                🤖 <strong>Entenda os riscos da IA em Cibersegurança</strong><br>
-                🔒 <strong>Torne-se um expert em segurança digital</strong>
+                Quer descobrir muita coisa interessante sobre cibersegurança e InteligÊncia Artificial?<br>
+                🔒 <strong>Aprenda sobre o conceito de Cibersegurança</strong><br>
+                🤖 <strong>Entenda os Mitos e Verdades sobre IA</strong><br>
+                🚀 <strong>Seja a voz da segurança digital na sua equipe</strong>
             </p>
             <div class="invite-buttons">
                 <button class="invite-btn-primary" onclick="aceitarConvite()">
@@ -839,20 +839,15 @@
             inviteOverlay.style.display = 'none';
             
             // Mostra mensagem de confirmação
-            alert('🎉 Parabéns! Você se inscreveu no Talk "Mitos e Verdades sobre Cibersegurança na Era da IA"!\n\nEm breve você receberá mais informações sobre data, horário e local do evento.\n\nObrigado por se preocupar com sua segurança digital! 🛡️');
+            
+alert('🛡️ Talk: "Mitos e Verdades sobre Cibersegurança na Era da IA"\n\n📍 Stand FEBRABAN EDUCAÇÃO\n🕒 Hoje às 14h45\n\nEsperamos você lá!');
+
             
             // Destravar o scroll e ir para o final da página
             finalizarExperiencia();
         }
 
-        // Função quando recusa o convite
-        function recusarConvite() {
-            const inviteOverlay = document.getElementById('inviteOverlay');
-            inviteOverlay.style.display = 'none';
-            
-            // Mensagem motivacional
-            alert('📚 Tudo bem! O importante é que você já deu o primeiro passo ao participar desta demonstração.\n\nLembre-se: a segurança digital é uma jornada contínua de aprendizado. Continue sempre alerta! 🔍');
-            
+           
             // Destravar o scroll e ir para o final da página
             finalizarExperiencia();
         }
@@ -869,8 +864,8 @@
             
             scrollTimer = setTimeout(() => {
                 document.body.classList.remove('scroll-unlocked');
-                console.log('Scroll foi travado novamente após 2 minutos');
-            }, 120000); // 2 minutos
+                console.log('Scroll foi travado novamente após 10 minutos');
+            }, 600000); // 2 minutos
             
             // Vai para o final da página
             setTimeout(() => {
