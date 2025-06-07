@@ -17,6 +17,7 @@
             color: #e2e8f0;
             min-height: 100vh;
             overflow-x: hidden;
+            overflow-y: hidden; /* Esta linha trava o scroll vertical */
         }
 
         .matrix-bg {
