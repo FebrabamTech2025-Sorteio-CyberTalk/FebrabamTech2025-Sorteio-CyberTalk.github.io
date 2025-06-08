@@ -497,6 +497,8 @@
             display: grid;
             gap: 1.5rem;
             margin: 2rem 0;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .tip-item {
@@ -506,6 +508,10 @@
             border-left: 3px solid #00ff9d;
             transition: all 0.3s ease;
             cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
 
         .tip-item:hover {
@@ -518,17 +524,24 @@
             font-weight: 600;
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
+            word-wrap: break-word;
         }
 
         .tip-description {
             color: #cbd5e0;
             line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .tip-description a {
             color: #00d4ff;
             text-decoration: none;
             font-weight: 600;
+            word-break: break-all;
+            display: inline-block;
+            max-width: 100%;
         }
 
         .tip-description a:hover {
@@ -695,14 +708,28 @@
             
             .tip-item {
                 padding: 1.2rem;
+                margin: 0;
+                width: 100%;
+                box-sizing: border-box;
             }
             
             .tip-title {
                 font-size: 1rem;
+                word-wrap: break-word;
+                line-height: 1.3;
             }
             
             .tip-description {
                 font-size: 0.95rem;
+                line-height: 1.5;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            .tip-description a {
+                font-size: 0.9rem;
+                word-break: break-all;
+                line-height: 1.4;
             }
             
             .footer {
@@ -836,16 +863,32 @@
             
             .tip-item {
                 padding: 1rem;
+                margin: 0;
+                width: 100%;
+                box-sizing: border-box;
+                border-radius: 6px;
             }
             
             .tip-title {
                 font-size: 0.95rem;
                 margin-bottom: 0.4rem;
+                word-wrap: break-word;
+                line-height: 1.2;
             }
             
             .tip-description {
                 font-size: 0.9rem;
                 line-height: 1.5;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            .tip-description a {
+                font-size: 0.85rem;
+                word-break: break-all;
+                line-height: 1.3;
+                display: block;
+                margin: 0.3rem 0;
             }
             
             .footer {
@@ -987,14 +1030,33 @@
             
             .tip-item {
                 padding: 0.8rem;
+                margin: 0;
+                width: 100%;
+                box-sizing: border-box;
+                border-radius: 6px;
             }
             
             .tip-title {
                 font-size: 0.9rem;
+                margin-bottom: 0.3rem;
+                word-wrap: break-word;
+                line-height: 1.2;
             }
             
             .tip-description {
                 font-size: 0.85rem;
+                line-height: 1.4;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            .tip-description a {
+                font-size: 0.8rem;
+                word-break: break-all;
+                line-height: 1.3;
+                display: block;
+                margin: 0.2rem 0;
+                padding: 0.2rem 0;
             }
             
             .alert-content {
