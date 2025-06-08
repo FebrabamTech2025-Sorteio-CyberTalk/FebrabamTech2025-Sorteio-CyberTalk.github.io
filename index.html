@@ -784,7 +784,8 @@
         let scrollTimer = null;
 
         // Função do formulário de brinde
-        function enviarFormulario() {
+        function enviarFormulario(event) {
+            console.log('Função enviarFormulario chamada'); // Debug
             const nomeInput = document.getElementById('nomeUsuario');
             const nome = nomeInput.value.trim();
             
