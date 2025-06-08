@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -18,10 +17,9 @@
             color: #e2e8f0;
             min-height: 100vh;
             overflow-x: hidden;
-            overflow-y: hidden; /* Esta linha trava o scroll vertical */
+            overflow-y: hidden;
         }
 
-        /* Classe para destravar o scroll */
         body.scroll-unlocked {
             overflow-y: auto !important;
         }
@@ -39,6 +37,7 @@
             justify-content: center;
             align-items: center;
             animation: alertPulse 0.5s ease-in-out;
+            padding: 1rem;
         }
 
         /* CONVITE VERDE LIMÃO */
@@ -54,25 +53,25 @@
             justify-content: center;
             align-items: center;
             animation: invitePulse 0.7s ease-in-out;
+            padding: 1rem;
         }
 
-        /* Convite Verde Limão - Versão Responsiva */
-.invite-content {
-    background: linear-gradient(145deg, #B1ED00, #00ff32);
-    border: 3px solid #ff1493;
-    border-radius: 25px;
-    padding: 2rem; /* Reduzido de 3rem para 2rem */
-    text-align: center;
-    max-width: 90%; /* Reduzido de 700px para 90% da tela */
-    width: 100%;
-    margin: 1rem; /* Reduzido de 2rem para 1rem */
-    box-shadow: 
-        0 0 60px rgba(50, 205, 50, 0.8),
-        inset 0 2px 10px rgba(255, 255, 255, 0.3);
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box; /* Garante que padding seja incluído na largura */
-}
+        .invite-content {
+            background: linear-gradient(145deg, #B1ED00, #00ff32);
+            border: 3px solid #ff1493;
+            border-radius: 25px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 90%;
+            width: 100%;
+            margin: 1rem;
+            box-shadow: 
+                0 0 60px rgba(50, 205, 50, 0.8),
+                inset 0 2px 10px rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
 
         .invite-content::before {
             content: '';
@@ -85,70 +84,70 @@
             animation: inviteShine 2.5s infinite;
         }
 
-       .invite-icon {
-    font-size: 3rem; /* Reduzido de 4rem para 3rem */
-    color: #ff1493;
-    margin-bottom: 1rem;
-    animation: inviteBounce 1.5s infinite;
-}
+        .invite-icon {
+            font-size: 3rem;
+            color: #ff1493;
+            margin-bottom: 1rem;
+            animation: inviteBounce 1.5s infinite;
+        }
 
         .invite-title {
-    font-size: 2rem; /* Reduzido de 2.8rem para 2rem */
-    color: #ff1493;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
-    text-transform: uppercase;
-    letter-spacing: 1px; /* Reduzido de 2px para 1px */
-    position: relative;
-    z-index: 2;
-}
+            font-size: 2rem;
+            color: #ff1493;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
 
         .invite-subtitle {
-    font-size: 1.5rem; /* Reduzido de 2rem para 1.5rem */
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 1rem; /* Reduzido de 1.5rem para 1rem */
-    text-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
-    position: relative;
-    z-index: 2;
-}
+            font-size: 1.5rem;
+            color: #000000;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+            position: relative;
+            z-index: 2;
+        }
 
         .invite-message {
-    font-size: 1.1rem; /* Reduzido de 1.4rem para 1.1rem */
-    color: #ff1493;
-    line-height: 1.5; /* Reduzido de 1.6 para 1.5 */
-    margin-bottom: 1.5rem; /* Reduzido de 2rem para 1.5rem */
-    position: relative;
-    z-index: 2;
-    font-weight: 600;
-}
+            font-size: 1.1rem;
+            color: #ff1493;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            font-weight: 600;
+        }
 
         .invite-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 2;
-}
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
 
         .invite-btn-primary {
-    background: linear-gradient(45deg, #ff1493, #000000);
-    color: #ffffff;
-    border: 2px solid #B1ED00;
-    padding: 1rem 2rem; /* Reduzido de 1.2rem 2.5rem */
-    font-size: 1.1rem; /* Reduzido de 1.3rem */
-    font-weight: bold;
-    border-radius: 35px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
-    width: 100%; /* Botão ocupa toda a largura disponível */
-    max-width: 250px; /* Largura máxima do botão */
-}
+            background: linear-gradient(45deg, #ff1493, #000000);
+            color: #ffffff;
+            border: 2px solid #B1ED00;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 35px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+            width: 100%;
+            max-width: 250px;
+        }
 
         .invite-btn-secondary {
             background: transparent;
@@ -196,7 +195,8 @@
             border-radius: 20px;
             padding: 3rem;
             text-align: center;
-            max-width: 600px;
+            max-width: 90%;
+            width: 100%;
             margin: 2rem;
             box-shadow: 
                 0 0 50px rgba(220, 20, 60, 0.8),
@@ -525,6 +525,17 @@
             line-height: 1.6;
         }
 
+        .tip-description a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .tip-description a:hover {
+            color: #00ff9d;
+            text-decoration: underline;
+        }
+
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -603,6 +614,26 @@
             gap: 0.5rem;
         }
 
+        /* RESPONSIVIDADE PARA TABLET */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .brinde-section {
+                padding: 2rem;
+            }
+            
+            .content {
+                padding: 2rem;
+            }
+            
+            .header {
+                padding: 1.5rem;
+            }
+        }
+
+        /* RESPONSIVIDADE PARA TABLET PEQUENO */
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -622,12 +653,64 @@
             
             .brinde-title {
                 font-size: 1.8rem;
+                letter-spacing: 1px;
             }
             
             .form-input {
                 max-width: 100%;
+                padding: 0.9rem 1.2rem;
+                font-size: 1rem;
+            }
+            
+            .form-label {
+                font-size: 1.2rem;
+            }
+            
+            .btn-enviar {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .brinde-section {
+                padding: 2rem 1.5rem;
+                margin: 1.5rem 0;
+            }
+            
+            .content {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+            
+            .header {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .main-message {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+            
+            .tip-item {
+                padding: 1.2rem;
+            }
+            
+            .tip-title {
+                font-size: 1rem;
+            }
+            
+            .tip-description {
+                font-size: 0.95rem;
+            }
+            
+            .footer {
+                padding: 1.5rem;
+                margin-top: 2rem;
             }
 
+            /* Alertas em tablets */
             .alert-title {
                 font-size: 2rem;
             }
@@ -640,7 +723,17 @@
                 padding: 2rem;
                 margin: 1rem;
             }
-            /* ADICIONE ESTAS NOVAS REGRAS AQUI ⬇️ */
+            
+            .alert-icon {
+                font-size: 4rem;
+            }
+            
+            .alert-close-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1.1rem;
+            }
+
+            /* Convites em tablets */
             .invite-content {
                 padding: 1.5rem;
                 margin: 0.5rem;
@@ -676,10 +769,144 @@
                 max-width: 200px;
             }
         }
-   }
+
+        /* RESPONSIVIDADE PARA CELULAR */
         @media (max-width: 480px) {
-    /* regras para telas muito pequenas */
-    .invite-content {
+            .container {
+                padding: 0.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .question {
+                font-size: 1.3rem;
+            }
+            
+            .brinde-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+            
+            .form-label {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .form-input {
+                padding: 0.8rem 1rem;
+                font-size: 0.95rem;
+            }
+            
+            .btn-enviar {
+                padding: 0.9rem 1.5rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .brinde-section {
+                padding: 1.5rem 1rem;
+                margin: 1rem 0;
+                border-radius: 15px;
+            }
+            
+            .content {
+                padding: 1.2rem;
+                margin: 1rem 0;
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 1.2rem;
+                margin-bottom: 1.5rem;
+                border-radius: 12px;
+            }
+            
+            .main-message {
+                padding: 1.2rem;
+                margin: 1rem 0;
+            }
+            
+            .tip-item {
+                padding: 1rem;
+            }
+            
+            .tip-title {
+                font-size: 0.95rem;
+                margin-bottom: 0.4rem;
+            }
+            
+            .tip-description {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+            
+            .footer {
+                padding: 1.2rem;
+                margin-top: 1.5rem;
+            }
+            
+            .footer h3 {
+                font-size: 1.1rem;
+            }
+            
+            .footer p {
+                font-size: 0.95rem;
+            }
+            
+            .stat-card {
+                padding: 1.2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.85rem;
+            }
+
+            /* Alertas em celulares */
+            .alert-content {
+                padding: 1.5rem;
+                margin: 0.5rem;
+                max-width: 95%;
+                border-radius: 15px;
+            }
+            
+            .alert-icon {
+                font-size: 3.5rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .alert-title {
+                font-size: 1.5rem;
+                margin-bottom: 0.8rem;
+                letter-spacing: 1px;
+            }
+            
+            .alert-message {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin-bottom: 1.5rem;
+            }
+            
+            .alert-close-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 200px;
+            }
+
+            /* Convites em celulares */
+            .invite-content {
                 padding: 1rem;
                 margin: 0.5rem;
                 max-width: 98%;
@@ -711,8 +938,202 @@
                 font-size: 0.9rem;
                 max-width: 180px;
             }
+            
+            /* Ajustes para textos pequenos */
+            .tips {
+                gap: 1rem;
+            }
+            
+            .form-group {
+                margin-bottom: 1.2rem;
+            }
         }
-    }
+
+        /* RESPONSIVIDADE PARA CELULARES MUITO PEQUENOS */
+        @media (max-width: 320px) {
+            .container {
+                padding: 0.25rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .brinde-title {
+                font-size: 1.3rem;
+            }
+            
+            .form-input {
+                padding: 0.7rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .btn-enviar {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .brinde-section {
+                padding: 1rem 0.8rem;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+            
+            .header {
+                padding: 1rem;
+            }
+            
+            .tip-item {
+                padding: 0.8rem;
+            }
+            
+            .tip-title {
+                font-size: 0.9rem;
+            }
+            
+            .tip-description {
+                font-size: 0.85rem;
+            }
+            
+            .alert-content {
+                padding: 1rem;
+                margin: 0.25rem;
+            }
+            
+            .alert-title {
+                font-size: 1.3rem;
+            }
+            
+            .alert-message {
+                font-size: 0.9rem;
+            }
+            
+            .invite-content {
+                padding: 0.8rem;
+                margin: 0.25rem;
+            }
+            
+            .invite-title {
+                font-size: 1.2rem;
+            }
+            
+            .invite-subtitle {
+                font-size: 1rem;
+            }
+            
+            .invite-message {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* RESPONSIVIDADE PARA LANDSCAPE EM CELULARES */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .alert-content {
+                max-height: 90vh;
+                overflow-y: auto;
+                padding: 1rem;
+            }
+            
+            .invite-content {
+                max-height: 90vh;
+                overflow-y: auto;
+                padding: 1rem;
+            }
+            
+            .alert-icon {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .invite-icon {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .alert-title {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .invite-title {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .alert-message {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .invite-message {
+                font-size: 0.9rem;
+                margin-bottom: 0.8rem;
+            }
+        }
+
+        /* MELHORIAS PARA TOUCH */
+        @media (pointer: coarse) {
+            .btn-enviar,
+            .alert-close-btn,
+            .invite-btn-primary,
+            .invite-btn-secondary {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            .form-input {
+                min-height: 44px;
+            }
+            
+            .tip-item {
+                cursor: default;
+            }
+            
+            .tip-item:active {
+                background: rgba(0, 255, 157, 0.2);
+                transform: scale(0.98);
+            }
+        }
+
+        /* AJUSTES PARA MODO ESCURO DO SISTEMA */
+        @media (prefers-color-scheme: dark) {
+            .form-input {
+                background: rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        /* AJUSTES PARA REDUÇÃO DE MOVIMENTO */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .matrix-bg {
+                display: none;
+            }
+        }
+
+        /* MELHORIAS DE ACESSIBILIDADE */
+        @media (prefers-contrast: high) {
+            .form-input {
+                border-color: #00ff9d;
+                background: rgba(0, 0, 0, 0.8);
+            }
+            
+            .tip-item {
+                border-left-width: 5px;
+                background: rgba(0, 0, 0, 0.6);
+            }
+            
+            .content {
+                background: rgba(45, 55, 72, 0.8);
+                border-color: rgba(0, 212, 255, 0.5);
+            }
+        }
     </style>
 </head>
 <body>
@@ -733,9 +1154,7 @@
                 <button class="invite-btn-primary" onclick="aceitarConvite()">
                     🎯 Vamos Nessa!
                 </button>
-                
-
-                </div>
+            </div>
         </div>
     </div>
 
@@ -779,7 +1198,7 @@
             </div>
              <p><br></p>
 
-            <button class="btn-enviar" onclick="enviarFormulario()">
+            <button class="btn-enviar" onclick="enviarFormulario(event)">
                 Enviar
             </button>
         </div>
@@ -905,10 +1324,10 @@ alert('\n\n🛡️ Talk: "Mitos e Verdades sobre Cibersegurança na Era da IA"\n
             
         // Função para finalizar a experiência
         function finalizarExperiencia() {
-            // Destravar o scroll por 2 minutos
+            // Destravar o scroll por 10 minutos
             document.body.classList.add('scroll-unlocked');
             
-            // Timer para retravar o scroll após 2 minutos (120000ms)
+            // Timer para retravar o scroll após 10 minutos (600000ms)
             if (scrollTimer) {
                 clearTimeout(scrollTimer);
             }
@@ -916,7 +1335,7 @@ alert('\n\n🛡️ Talk: "Mitos e Verdades sobre Cibersegurança na Era da IA"\n
             scrollTimer = setTimeout(() => {
                 document.body.classList.remove('scroll-unlocked');
                 console.log('Scroll foi travado novamente após 10 minutos');
-            }, 600000); // 2 minutos
+            }, 600000); // 10 minutos
             
             // Vai para o final da página
             setTimeout(() => {
@@ -981,7 +1400,7 @@ alert('\n\n🛡️ Talk: "Mitos e Verdades sobre Cibersegurança na Era da IA"\n
             if (nomeInput) {
                 nomeInput.addEventListener('keypress', function(e) {
                     if (e.key === 'Enter') {
-                        enviarFormulario();
+                        enviarFormulario(e);
                     }
                 });
             }
@@ -998,6 +1417,22 @@ alert('\n\n🛡️ Talk: "Mitos e Verdades sobre Cibersegurança na Era da IA"\n
                     });
                 }
             });
+        });
+
+        // Redimensionar matriz quando a tela mudar de orientação
+        window.addEventListener('orientationchange', function() {
+            setTimeout(() => {
+                const matrix = document.getElementById('matrix');
+                matrix.innerHTML = '';
+                createMatrix();
+            }, 100);
+        });
+
+        // Redimensionar matriz quando a janela for redimensionada
+        window.addEventListener('resize', function() {
+            const matrix = document.getElementById('matrix');
+            matrix.innerHTML = '';
+            createMatrix();
         });
     </script>
 </body>
