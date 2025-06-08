@@ -55,20 +55,23 @@
             animation: invitePulse 0.7s ease-in-out;
         }
 
-        .invite-content {
-            background: linear-gradient(145deg, #B1ED00, #00ff32);
-            border: 3px solid #ff1493;
-            border-radius: 25px;
-            padding: 3rem;
-            text-align: center;
-            max-width: 700px;
-            margin: 2rem;
-            box-shadow: 
-                0 0 60px rgba(50, 205, 50, 0.8),
-                inset 0 2px 10px rgba(255, 255, 255, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
+        /* Convite Verde Limão - Versão Responsiva */
+.invite-content {
+    background: linear-gradient(145deg, #B1ED00, #00ff32);
+    border: 3px solid #ff1493;
+    border-radius: 25px;
+    padding: 2rem; /* Reduzido de 3rem para 2rem */
+    text-align: center;
+    max-width: 90%; /* Reduzido de 700px para 90% da tela */
+    width: 100%;
+    margin: 1rem; /* Reduzido de 2rem para 1rem */
+    box-shadow: 
+        0 0 60px rgba(50, 205, 50, 0.8),
+        inset 0 2px 10px rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box; /* Garante que padding seja incluído na largura */
+}
 
         .invite-content::before {
             content: '';
@@ -81,68 +84,70 @@
             animation: inviteShine 2.5s infinite;
         }
 
-        .invite-icon {
-            font-size: 4rem;
-            color: #ff1493;
-            margin-bottom: 1rem;
-            animation: inviteBounce 1.5s infinite;
-        }
+       .invite-icon {
+    font-size: 3rem; /* Reduzido de 4rem para 3rem */
+    color: #ff1493;
+    margin-bottom: 1rem;
+    animation: inviteBounce 1.5s infinite;
+}
 
         .invite-title {
-            font-size: 2.8rem;
-            color: #ff1493;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            z-index: 2;
-        }
+    font-size: 2rem; /* Reduzido de 2.8rem para 2rem */
+    color: #ff1493;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Reduzido de 2px para 1px */
+    position: relative;
+    z-index: 2;
+}
 
         .invite-subtitle {
-            font-size: 2rem;
-            color: #000000;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
-            position: relative;
-            z-index: 2;
-        }
+    font-size: 1.5rem; /* Reduzido de 2rem para 1.5rem */
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 1rem; /* Reduzido de 1.5rem para 1rem */
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+    position: relative;
+    z-index: 2;
+}
 
         .invite-message {
-            font-size: 1.4rem;
-            color: #ff1493;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 2;
-            font-weight: 600;
-        }
+    font-size: 1.1rem; /* Reduzido de 1.4rem para 1.1rem */
+    color: #ff1493;
+    line-height: 1.5; /* Reduzido de 1.6 para 1.5 */
+    margin-bottom: 1.5rem; /* Reduzido de 2rem para 1.5rem */
+    position: relative;
+    z-index: 2;
+    font-weight: 600;
+}
 
         .invite-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 2;
-        }
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
 
         .invite-btn-primary {
-            background: linear-gradient(45deg, #ff1493, #000000);
-            color: #ffffff;
-            border: 2px solid #B1ED00;
-            padding: 1.2rem 2.5rem;
-            font-size: 1.3rem;
-            font-weight: bold;
-            border-radius: 35px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
-        }
+    background: linear-gradient(45deg, #ff1493, #000000);
+    color: #ffffff;
+    border: 2px solid #B1ED00;
+    padding: 1rem 2rem; /* Reduzido de 1.2rem 2.5rem */
+    font-size: 1.1rem; /* Reduzido de 1.3rem */
+    font-weight: bold;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+    width: 100%; /* Botão ocupa toda a largura disponível */
+    max-width: 250px; /* Largura máxima do botão */
+}
 
         .invite-btn-secondary {
             background: transparent;
@@ -634,7 +639,79 @@
                 padding: 2rem;
                 margin: 1rem;
             }
+            /* ADICIONE ESTAS NOVAS REGRAS AQUI ⬇️ */
+            .invite-content {
+                padding: 1.5rem;
+                margin: 0.5rem;
+                max-width: 95%;
+                border-radius: 20px;
+            }
+            
+            .invite-icon {
+                font-size: 2.5rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .invite-title {
+                font-size: 1.6rem;
+                margin-bottom: 0.8rem;
+                letter-spacing: 0.5px;
+            }
+            
+            .invite-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .invite-message {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin-bottom: 1.2rem;
+            }
+            
+            .invite-btn-primary {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+                max-width: 200px;
+            }
         }
+   }
+        @media (max-width: 480px) {
+    /* regras para telas muito pequenas */
+    .invite-content {
+                padding: 1rem;
+                margin: 0.5rem;
+                max-width: 98%;
+                border-radius: 15px;
+            }
+            
+            .invite-icon {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .invite-title {
+                font-size: 1.4rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .invite-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .invite-message {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+            
+            .invite-btn-primary {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+                max-width: 180px;
+            }
+        }
+    }
     </style>
 </head>
 <body>
@@ -647,7 +724,7 @@
             <h3 class="invite-subtitle"> Mitos e Verdades sobre Cibersegurança na Era da IA</h3>
             <p class="invite-message">
               <!--  Quer descobrir muita coisa interessante sobre cibersegurança e Inteligência Artificial?<br><br>-->
-                🔒 <strong>Aprenda o conceito de Cibersegurança</strong><br>
+                🔒 <strong>Aprenda o Conceito de Cibersegurança</strong><br>
                 🤖 <strong>Entenda Mitos e Verdades sobre IA</strong><br>
                 🚀 <strong>Seja a voz da segurança digital na sua equipe</strong>
             </p>
