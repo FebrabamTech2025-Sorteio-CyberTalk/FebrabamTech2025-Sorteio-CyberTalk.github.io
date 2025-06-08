@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #2d3748 100%);
+            background: linear-gradient(135deg, #000000 0%, #111111 50%, #222222 100%);
             color: #e2e8f0;
             min-height: 100vh;
             overflow-x: hidden;
@@ -307,10 +307,10 @@
             text-align: center;
             margin-bottom: 3rem;
             padding: 2rem;
-            background: rgba(45, 55, 72, 0.3);
+            background: linear-gradient(145deg, rgba(57, 217, 49, 0.08), rgba(46, 180, 40, 0.05));
             border-radius: 15px;
-            border: 1px solid rgba(0, 255, 157, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 0.5px solid #39D931;
+            box-shadow: 0 0 30px rgba(57, 217, 49, 0.3);
             backdrop-filter: blur(10px);
         }
         
@@ -341,14 +341,14 @@
 
         /* SEÇÃO DO BRINDE */
         .brinde-section {
-            background: linear-gradient(145deg, rgba(0, 255, 157, 0.15), rgba(0, 212, 255, 0.1));
-            border: 2px solid #00ff9d;
+            background: linear-gradient(145deg, rgba(57, 217, 49, 0.08), rgba(46, 180, 40, 0.05));
+            border: 2px solid #39D931;
             border-radius: 20px;
             padding: 2.5rem;
             margin: 2rem 0;
             text-align: center;
             box-shadow: 
-                0 0 30px rgba(0, 255, 157, 0.3),
+                0 0 30px rgba(57, 217, 49, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
@@ -361,7 +361,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(0, 255, 157, 0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(57, 217, 49, 0.05), transparent);
             animation: shine 3s infinite;
         }
 
@@ -372,10 +372,10 @@
 
         .brinde-title {
             font-size: 2.2rem;
-            color: #00ff9d;
+            color: #39D931;
             font-weight: bold;
             margin-bottom: 2rem;
-            text-shadow: 0 0 15px rgba(0, 255, 157, 0.8);
+            text-shadow: 0 0 15px rgba(57, 217, 49, 0.8);
             text-transform: uppercase;
             letter-spacing: 2px;
             position: relative;
@@ -402,7 +402,7 @@
             padding: 1rem 1.5rem;
             font-size: 1.1rem;
             background: rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(0, 255, 157, 0.3);
+            border: 2px solid rgba(57, 217, 49, 0.3);
             border-radius: 12px;
             color: #e2e8f0;
             outline: none;
@@ -411,9 +411,9 @@
         }
 
         .form-input:focus {
-            border-color: #00ff9d;
+            border-color: #39D931;
             box-shadow: 
-                0 0 0 3px rgba(0, 255, 157, 0.2),
+                0 0 0 3px rgba(57, 217, 49, 0.2),
                 inset 0 2px 8px rgba(0, 0, 0, 0.3);
             transform: translateY(-2px);
         }
@@ -435,9 +435,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-top: 1rem;
+            margin-bottom: 1rem;
             box-shadow: 0 4px 15px rgba(0, 255, 157, 0.3);
             position: relative;
             overflow: hidden;
+            min-height: 48px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn-enviar:hover {
@@ -469,12 +474,11 @@
         }
 
         .main-message {
-            background: rgba(0, 0, 0, 0.4);
-            border-left: 4px solid #00ff9d;
+            background: transparent;
+            border: none;
             padding: 2rem;
             margin: 2rem 0;
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 255, 157, 0.1);
         }
 
         .question {
@@ -485,12 +489,13 @@
         }
 
         .content {
-            background: rgba(45, 55, 72, 0.5);
+            background: linear-gradient(145deg, rgba(57, 217, 49, 0.08), rgba(46, 180, 40, 0.05));
             padding: 2.5rem;
             border-radius: 12px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 0.5px solid #39D931;
             margin: 2rem 0;
             backdrop-filter: blur(5px);
+            box-shadow: 0 0 30px rgba(57, 217, 49, 0.3);
         }
 
         .tips {
@@ -502,10 +507,10 @@
         }
 
         .tip-item {
-            background: rgba(0, 0, 0, 0.3);
+            background: linear-gradient(145deg, rgba(57, 217, 49, 0.08), rgba(46, 180, 40, 0.05));
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 3px solid #00ff9d;
+            border-left: 3px solid #39D931;
             transition: all 0.3s ease;
             cursor: pointer;
             width: 100%;
@@ -515,12 +520,13 @@
         }
 
         .tip-item:hover {
-            background: rgba(0, 255, 157, 0.1);
+            background: rgba(57, 217, 49, 0.15);
             transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(57, 217, 49, 0.2);
         }
 
         .tip-title {
-            color: #00ff9d;
+            color: #39D931;
             font-weight: 600;
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
@@ -557,11 +563,12 @@
         }
 
         .stat-card {
-            background: rgba(0, 0, 0, 0.4);
+            background: linear-gradient(145deg, rgba(57, 217, 49, 0.08), rgba(46, 180, 40, 0.05));
             padding: 1.5rem;
             border-radius: 10px;
             text-align: center;
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 0.5px solid #39D931;
+            box-shadow: 0 0 15px rgba(57, 217, 49, 0.2);
         }
 
         .stat-number {
@@ -581,9 +588,10 @@
             text-align: center;
             margin-top: 3rem;
             padding: 2rem;
-            background: rgba(0, 0, 0, 0.3);
+            background: linear-gradient(145deg, rgba(57, 217, 49, 0.08), rgba(46, 180, 40, 0.05));
             border-radius: 10px;
-            border: 1px solid rgba(0, 255, 157, 0.1);
+            border: 0.5px solid #39D931;
+            box-shadow: 0 0 30px rgba(57, 217, 49, 0.3);
         }
 
         .btn {
@@ -684,11 +692,15 @@
                 font-size: 1.1rem;
                 width: 100%;
                 max-width: 300px;
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                min-height: 48px;
             }
             
             .brinde-section {
                 padding: 2rem 1.5rem;
                 margin: 1.5rem 0;
+                padding-bottom: 2.5rem;
             }
             
             .content {
@@ -836,12 +848,16 @@
                 font-size: 1rem;
                 width: 100%;
                 max-width: 280px;
+                margin-top: 1.5rem;
+                margin-bottom: 2rem;
+                min-height: 48px;
             }
             
             .brinde-section {
                 padding: 1.5rem 1rem;
                 margin: 1rem 0;
                 border-radius: 15px;
+                padding-bottom: 2.5rem;
             }
             
             .content {
@@ -1014,10 +1030,18 @@
             .btn-enviar {
                 padding: 0.8rem 1.2rem;
                 font-size: 0.9rem;
+                margin-top: 1.5rem;
+                margin-bottom: 2rem;
+                min-height: 48px;
+                width: 100%;
+                max-width: 250px;
             }
             
             .brinde-section {
                 padding: 1rem 0.8rem;
+                margin: 0.5rem 0;
+                padding-bottom: 2.5rem;
+                min-height: auto;
             }
             
             .content {
@@ -1135,6 +1159,42 @@
             }
         }
 
+        /* GARANTIA DE VISIBILIDADE DO BOTÃO EM CELULARES */
+        @media (max-height: 600px) {
+            .brinde-section {
+                padding-bottom: 3rem;
+                margin-bottom: 2rem;
+            }
+            
+            .btn-enviar {
+                margin-bottom: 2rem;
+                position: relative;
+                z-index: 10;
+            }
+        }
+
+        /* CORREÇÃO PARA CELULARES COM TELA MUITO BAIXA */
+        @media (max-height: 500px) {
+            .brinde-section {
+                padding: 1rem;
+                padding-bottom: 2rem;
+            }
+            
+            .brinde-title {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .form-group {
+                margin-bottom: 1rem;
+            }
+            
+            .btn-enviar {
+                margin-top: 1rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
         /* MELHORIAS PARA TOUCH */
         @media (pointer: coarse) {
             .btn-enviar,
@@ -1182,18 +1242,18 @@
         /* MELHORIAS DE ACESSIBILIDADE */
         @media (prefers-contrast: high) {
             .form-input {
-                border-color: #00ff9d;
+                border-color: #39D931;
                 background: rgba(0, 0, 0, 0.8);
             }
             
             .tip-item {
                 border-left-width: 5px;
-                background: rgba(0, 0, 0, 0.6);
+                background: linear-gradient(145deg, rgba(57, 217, 49, 0.15), rgba(46, 180, 40, 0.1));
             }
             
             .content {
-                background: rgba(45, 55, 72, 0.8);
-                border-color: rgba(0, 212, 255, 0.5);
+                background: linear-gradient(145deg, rgba(57, 217, 49, 0.15), rgba(46, 180, 40, 0.1));
+                border-color: #39D931;
             }
         }
     </style>
@@ -1273,11 +1333,10 @@
         </div>
 
         <div class="content" id="final-pagina">
-            <h2 style="color: #00d4ff; margin-bottom: 1.5rem; text-align: center;">Os códigos QR são super práticos, não é mesmo?  </h2>
+            <h2 style="color: #00d4ff; margin-bottom: 1.5rem; text-align: center;">Os códigos QR são super práticos, não é mesmo?</h2>
             <p style="color: #e2e8f0; line-height: 1.7; font-size: 1.1rem; text-align: center;">
-                
-               <span class="highlight">Uma dica valiosa:</span> sempre que escanear um, dê uma espiadinha no endereço que aparece na tela antes de clicar para abrir.
-                            </p>
+                <span class="highlight">Dica valiosa:</span> sempre verifique o endereço antes de prosseguir
+            </p>
         </div>
 
     
@@ -1285,16 +1344,14 @@
             <h2 style="color: #00ff9d; margin-bottom: 1.5rem;">🛡️ Hábitos simples para a segurança</h2>
             <div class="tips">
                 <div class="tip-item">
-                    <div class="tip-title">🔍 Verifique </div>
-                    <div class="tip-description">Antes de clicar em um link, confira se o endereço (URL) é confiável.<br>
-                                                ⚠️ Cuidado com domínios parecidos com os reais, como banco-seguro.com em vez de banco.com.br.<br>
-                                                ✅ Empresas legítimas usam domínios oficiais e fáceis de reconhecer.</div>
+                    <div class="tip-description">💻 Prefira domínios oficiais, como <code style="background: rgba(0,255,157,0.2); padding: 2px 4px; border-radius: 3px;">banco.com.br</code>, e evite variações como <code style="background: rgba(255,0,0,0.2); padding: 2px 4px; border-radius: 3px;">banco-seguro.com</code>.<br>
+                    ✅ Empresas legítimas usam domínios oficiais e fáceis de reconhecer.</div>
                 </div>
                                            
                            
                 <div class="tip-item">
-    <div class="tip-title">🤝 Se estiver em dúvida, Consulte</div>
-    <div class="tip-description">Se receber um código QR ou link inesperadamente, verifique-o por outro canal antes de clicar, como por exemplo nos sites:
+    <div class="tip-title">❔ Na dúvida, Consulte</div>
+    <div class="tip-description">Verifique o link por outros canais antes de clicar, como por exemplo nos sites:
         <p>🔗 <a href="https://www.virustotal.com" target="_blank" rel="noopener noreferrer">https://www.virustotal.com</a></p> 
         <p>🔍 <a href="https://transparencyreport.google.com/safe-browsing/search" target="_blank" rel="noopener noreferrer">https://transparencyreport.google.com/safe-browsing/search</a></p>  
     </div>
@@ -1314,6 +1371,25 @@
 
     <script>
         let scrollTimer = null;
+
+        // FORÇA ABERTURA NO TOPO DA PÁGINA
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+            }, 100);
+        });
+
+        // Também força o topo quando a página fica visível
+        document.addEventListener('DOMContentLoaded', function() {
+            window.scrollTo(0, 0);
+        });
+
+        // Força topo quando sai de background (mobile)
+        window.addEventListener('pageshow', function() {
+            window.scrollTo(0, 0);
+        });
 
         // Função do formulário de brinde
         function enviarFormulario(event) {
@@ -1448,7 +1524,7 @@ alert('\n\n🛡️ Talk: "Mitos e Verdades sobre Cibersegurança na Era da IA"\n
         // Add interactive hover effects
         document.querySelectorAll('.tip-item').forEach(item => {
             item.addEventListener('mouseenter', function() {
-                this.style.boxShadow = '0 5px 20px rgba(0, 255, 157, 0.2)';
+                this.style.boxShadow = '0 5px 20px rgba(57, 217, 49, 0.3)';
             });
             
             item.addEventListener('mouseleave', function() {
