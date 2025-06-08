@@ -5,7 +5,811 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brinde Febrabam Tech 2025</title>
     <style>
+        * {<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brinde Febrabam Tech 2025</title>
+    <style>
         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #2d3748 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        body.scroll-unlocked {
+            overflow-y: auto !important;
+        }
+
+        /* ALERTA VERMELHO */
+        .alert-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(220, 20, 60, 0.95);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            animation: alertPulse 0.5s ease-in-out;
+        }
+
+        /* CONVITE VERDE LIMÃO */
+        .invite-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(50, 205, 50, 0.95);
+            z-index: 9998;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            animation: invitePulse 0.7s ease-in-out;
+        }
+
+        .invite-content {
+            background: linear-gradient(145deg, #B1ED00, #00ff32);
+            border: 3px solid #ff1493;
+            border-radius: 25px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 90%;
+            width: 100%;
+            margin: 1rem;
+            box-shadow: 
+                0 0 60px rgba(50, 205, 50, 0.8),
+                inset 0 2px 10px rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .invite-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 20, 147, 0.2), transparent);
+            animation: inviteShine 2.5s infinite;
+        }
+
+        .invite-icon {
+            font-size: 3rem;
+            color: #ff1493;
+            margin-bottom: 1rem;
+            animation: inviteBounce 1.5s infinite;
+        }
+
+        .invite-title {
+            font-size: 2rem;
+            color: #ff1493;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .invite-subtitle {
+            font-size: 1.5rem;
+            color: #000000;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+            position: relative;
+            z-index: 2;
+        }
+
+        .invite-message {
+            font-size: 1.1rem;
+            color: #ff1493;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            font-weight: 600;
+        }
+
+        .invite-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .invite-btn-primary {
+            background: linear-gradient(45deg, #ff1493, #000000);
+            color: #ffffff;
+            border: 2px solid #B1ED00;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 35px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+            width: 100%;
+            max-width: 250px;
+        }
+
+        .invite-btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.6);
+        }
+
+        .alert-content {
+            background: linear-gradient(145deg, #dc143c, #b91c1c);
+            border: 3px solid #ffffff;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 2rem;
+            box-shadow: 
+                0 0 50px rgba(220, 20, 60, 0.8),
+                inset 0 2px 10px rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alert-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: alertShine 2s infinite;
+        }
+
+        .alert-icon {
+            font-size: 5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            animation: bounce 1s infinite;
+        }
+
+        .alert-title {
+            font-size: 3rem;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .alert-message {
+            font-size: 1.5rem;
+            color: #ffffff;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .alert-close-btn {
+            background: #ffffff;
+            color: #dc143c;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .alert-close-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(45, 55, 72, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo img {
+            height: auto;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        h1 {
+            color: #00ff9d;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+        }
+
+        .subtitle {
+            color: #a0aec0;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* SEÇÃO DO BRINDE */
+        .brinde-section {
+            background: linear-gradient(145deg, rgba(0, 255, 157, 0.15), rgba(0, 212, 255, 0.1));
+            border: 2px solid #00ff9d;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 
+                0 0 30px rgba(0, 255, 157, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brinde-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 157, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .brinde-title {
+            font-size: 2.2rem;
+            color: #00ff9d;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 15px rgba(0, 255, 157, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 1.3rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(0, 255, 157, 0.3);
+            border-radius: 12px;
+            color: #e2e8f0;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-input:focus {
+            border-color: #00ff9d;
+            box-shadow: 
+                0 0 0 3px rgba(0, 255, 157, 0.2),
+                inset 0 2px 8px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .form-input::placeholder {
+            color: #a0aec0;
+        }
+
+        .btn-enviar {
+            background: linear-gradient(45deg, #00ff9d, #00d4ff);
+            color: #0f1419;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 255, 157, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-enviar:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 255, 157, 0.4);
+        }
+
+        .btn-enviar:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 4px 15px rgba(0, 255, 157, 0.6);
+        }
+
+        .btn-enviar::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-enviar:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .main-message {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid #00ff9d;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 255, 157, 0.1);
+        }
+
+        .question {
+            font-size: 1.8rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .content {
+            background: rgba(45, 55, 72, 0.5);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            margin: 2rem 0;
+            backdrop-filter: blur(5px);
+        }
+
+        .tips {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tip-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid #00ff9d;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tip-item:hover {
+            background: rgba(0, 255, 157, 0.1);
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 255, 157, 0.2);
+        }
+
+        .tip-title {
+            color: #00ff9d;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .tip-description {
+            color: #cbd5e0;
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 157, 0.1);
+        }
+
+        .highlight {
+            color: #00ff9d;
+            font-weight: 600;
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes alertPulse {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes invitePulse {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes alertShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @keyframes inviteShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @keyframes inviteBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1); }
+            40% { transform: translateY(-15px) scale(1.1); }
+            60% { transform: translateY(-8px) scale(1.05); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .question {
+                font-size: 1.5rem;
+            }
+            
+            .brinde-title {
+                font-size: 1.8rem;
+            }
+            
+            .form-input {
+                max-width: 100%;
+            }
+
+            .alert-title {
+                font-size: 2rem;
+            }
+
+            .alert-message {
+                font-size: 1.2rem;
+            }
+
+            .alert-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .invite-content {
+                padding: 1.5rem;
+                margin: 0.5rem;
+                max-width: 95%;
+                border-radius: 20px;
+            }
+            
+            .invite-icon {
+                font-size: 2.5rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .invite-title {
+                font-size: 1.6rem;
+                margin-bottom: 0.8rem;
+                letter-spacing: 0.5px;
+            }
+            
+            .invite-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .invite-message {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin-bottom: 1.2rem;
+            }
+            
+            .invite-btn-primary {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .invite-content {
+                padding: 1rem;
+                margin: 0.5rem;
+                max-width: 98%;
+                border-radius: 15px;
+            }
+            
+            .invite-icon {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .invite-title {
+                font-size: 1.4rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .invite-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .invite-message {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+            
+            .invite-btn-primary {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+                max-width: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- CONVITE VERDE LIMÃO -->
+    <div class="invite-overlay" id="inviteOverlay">
+        <div class="invite-content">
+            <div class="invite-icon">🤖</div>
+            <h2 class="invite-title">Convite Especial!</h2>
+            <p class="invite-message">Participe do nosso Talk no <strong>Stand Febraban Educação</strong> sobre:<br>
+            <h3 class="invite-subtitle">Mitos e Verdades sobre Cibersegurança na Era da IA</h3>
+            <p class="invite-message">
+                🔒 <strong>Aprenda o Conceito de Cibersegurança</strong><br>
+                🤖 <strong>Entenda Mitos e Verdades sobre IA</strong><br>
+                🚀 <strong>Seja a voz da segurança digital na sua equipe</strong>
+            </p>
+            <div class="invite-buttons">
+                <button class="invite-btn-primary" onclick="aceitarConvite()">
+                    🎯 Vamos Nessa!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALERTA VERMELHO -->
+    <div class="alert-overlay" id="alertOverlay">
+        <div class="alert-content">
+            <div class="alert-icon">⚠️</div>
+            <h2 class="alert-title">ALERTA!</h2>
+            <p class="alert-message">
+                Você acabou de fornecer seus dados para um site desconhecido!<br>
+                Esta é uma demonstração de como golpes de phishing funcionam.<br>
+                <strong>SEMPRE verifique a fonte antes de inserir informações!</strong>
+            </p>
+            <button class="alert-close-btn" onclick="fecharAlerta()">Entendi!</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="images/fbbtech2025.png" alt="FebrabamTech2025" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+
+        <!-- SEÇÃO DO BRINDE -->
+        <div class="brinde-section">
+            <p></p><br>
+            <h2 class="brinde-title">🎁 Retire seu Brinde 🎁</h2>
+            
+            <div class="form-group">
+                <label class="form-label">Digite seu nome:</label>
+                <input 
+                    type="text" 
+                    id="nomeUsuario" 
+                    class="form-input" 
+                    placeholder="Seu nome completo aqui..."
+                    maxlength="50"
+                >
+            </div>
+            <p><br></p>
+
+            <button class="btn-enviar" onclick="enviarFormulario(event)">
+                Enviar
+            </button>
+        </div>
+
+        <div class="main-message">
+            <div class="question"><p><br></p><p><br><br></p><p><br><br></p></div>
+            <p style="text-align: center; color: #cbd5e0; font-size: 1.1rem; line-height: 1.6;"></p>
+        </div>
+
+        <div class="content" id="final-pagina">
+            <h2 style="color: #00d4ff; margin-bottom: 1.5rem; text-align: center;">Os códigos QR são super práticos, não é mesmo?</h2>
+            <p style="color: #e2e8f0; line-height: 1.7; font-size: 1.1rem; text-align: center;">
+                <span class="highlight">Uma dica valiosa:</span> sempre que escanear um, dê uma espiadinha no endereço que aparece na tela antes de clicar para abrir.
+            </p>
+        </div>
+
+        <div class="content">
+            <h2 style="color: #00ff9d; margin-bottom: 1.5rem;">🛡️ Hábitos simples para a segurança</h2>
+            <div class="tips">
+                <div class="tip-item">
+                    <div class="tip-title">🔍 Verifique</div>
+                    <div class="tip-description">Antes de clicar em um link, confira se o endereço (URL) é confiável.<br>
+                        ⚠️ Cuidado com domínios parecidos com os reais, como banco-seguro.com em vez de banco.com.br.<br>
+                        ✅ Empresas legítimas usam domínios oficiais e fáceis de reconhecer.</div>
+                </div>
+                                           
+                <div class="tip-item">
+                    <div class="tip-title">🤝 Se estiver em dúvida, Consulte</div>
+                    <div class="tip-description">Se receber um código QR ou link inesperadamente, verifique-o por outro canal antes de clicar, como por exemplo nos sites:
+                        <p>🔗 <a href="https://www.virustotal.com" target="_blank" rel="noopener noreferrer">https://www.virustotal.com</a></p> 
+                        <p>🔍 <a href="https://transparencyreport.google.com/safe-browsing/search" target="_blank" rel="noopener noreferrer">https://transparencyreport.google.com/safe-browsing/search</a></p>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3 style="color: #00ff9d; margin-bottom: 1rem;">🎓 Continue Aprendendo</h3>
+            <p style="color: #cbd5e0; margin-bottom: 1.5rem;">
+                A conscientização sobre segurança é uma jornada, não um destino. Pequenos hábitos fazem uma grande diferença.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let scrollTimer = null;
+
+        function enviarFormulario(event) {
+            const nomeInput = document.getElementById('nomeUsuario');
+            const nome = nomeInput.value.trim();
+            
+            if (nome === '') {
+                alert('Por favor, digite seu nome antes de enviar!');
+                return;
+            }
+            
+            mostrarAlerta();
+            
+            const btn = event.target;
+            btn.style.background = '#28a745';
+            btn.textContent = 'Enviado! ✓';
+            
+            setTimeout(() => {
+                nomeInput.value = '';
+                setTimeout(() => {
+                    btn.style.background = 'linear-gradient(45deg, #00ff9d, #00d4ff)';
+                    btn.textContent = 'Enviar';
+                }, 1000);
+            }, 500);
+        }
+
+        function mostrarAlerta() {
+            document.getElementById('alertOverlay').style.display = 'flex';
+        }
+
+        function fecharAlerta() {
+            document.getElementById('alertOverlay').style.display = 'none';
+            mostrarConvite();
+        }
+
+        function mostrarConvite() {
+            document.getElementById('inviteOverlay').style.display = 'flex';
+        }
+
+        function aceitarConvite() {
+            document.getElementById('inviteOverlay').style.display = 'none';
+            alert('\n\n🛡️ Talk: "Mitos e Verdades sobre Cibersegurança na Era da IA"\n\n📍 Stand FEBRABAN EDUCAÇÃO\n🕒 Hoje às 14h45\n\n Te Esperamos lá!');
+            finalizarExperiencia();
+        }
+            
+        function finalizarExperiencia() {
+            document.body.classList.add('scroll-unlocked');
+            
+            if (scrollTimer) {
+                clearTimeout(scrollTimer);
+            }
+            
+            scrollTimer = setTimeout(() => {
+                document.body.classList.remove('scroll-unlocked');
+            }, 600000);
+            
+            setTimeout(() => {
+                document.getElementById('final-pagina').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 500);
+        }
+
+        // Adiciona evento de Enter no campo de input
+        document.addEventListener('DOMContentLoaded', function() {
+            const nomeInput = document.getElementById('nomeUsuario');
+            if (nomeInput) {
+                nomeInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        enviarFormulario(e);
+                    }
+                });
+            }
+        });
+
+        // Hover effects para tip-items
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.tip-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 5px 20px rgba(0, 255, 157, 0.2)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
             margin: 0;
             padding: 0;
             box-sizing: border-box;
